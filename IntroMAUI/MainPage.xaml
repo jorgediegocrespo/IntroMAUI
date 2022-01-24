@@ -1,0 +1,69 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:IntroMAUI.Controls"
+             x:Class="IntroMAUI.MainPage"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             mc:Ignorable="d"
+             BackgroundColor="{DynamicResource SecondaryColor}">
+
+    <ScrollView>
+        <Grid RowSpacing="25" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,*"
+              Padding="{OnPlatform iOS='30,60,30,30', Default='30'}">
+
+            <Label 
+                x:Name="lbTitle"
+                Grid.Row="0" TranslationX="30"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Center" />
+
+            <Label 
+                x:Name="lbOrientation"
+                Grid.Row="1"
+                SemanticProperties.HeadingLevel="Level1"
+                SemanticProperties.Description="Welcome"
+                FontSize="18"
+                HorizontalOptions="Center" />
+
+            <Button
+                Text="Show orient"
+                FontAttributes="Bold"
+                Grid.Row="2"
+                Clicked="OnShowOrientationClicked"
+                HorizontalOptions="Center" />
+            
+            <Button
+                Text="Open new window"
+                FontAttributes="Bold"
+                Grid.Row="3"
+                Clicked="OnOpenWindowClicked"
+                HorizontalOptions="Center" />
+
+            <Button
+                Text="Close window"
+                FontAttributes="Bold"
+                Grid.Row="4"
+                Clicked="OnCloseWindowClicked"
+                HorizontalOptions="Center" />
+
+            <Entry
+                Placeholder="This is the entry"
+                Grid.Row="5"
+                HorizontalOptions="Center" />
+
+            <controls:CustomEntry
+                Placeholder="This is the custom entry"
+                Grid.Row="6"
+                HorizontalOptions="Center" />
+
+            <Image Grid.Row="7"
+                d:Source="dotnet_bot.png"
+                SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                WidthRequest="250"
+                HeightRequest="310"
+                HorizontalOptions="Center" />
+
+        </Grid>
+    </ScrollView>
+</ContentPage>
